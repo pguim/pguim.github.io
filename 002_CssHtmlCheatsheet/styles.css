@@ -1,0 +1,238 @@
+/* Importing font from local (previously downloaded from google fonts) */
+@font-face {
+  font-family: 'Jet Brains';
+  src: url('resources/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Defining color variables (actually constants) */
+:root {
+  --color-bg-header: #3c77b9;
+  --color-bg-main: #f4f8fd;
+  --color-bg-foo: #96c0f5;
+  --color-text1: #e4e7e7;
+  --color-text2: #b1cff1;
+  --color-text2-hov: #fafcff;
+  --color-section-border: #b8b8b8;
+}
+
+/* Span used as a trick to fix anchor offset created by fixed floating header */
+.anchor {
+  position: relative;
+  top: -80px;
+  display: inline;
+  background-color: transparent;
+}
+
+/* Reset margins, paddings and borders */
+* {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+/* Remove decoration from anchors */
+a {
+  text-decoration: none;
+}
+
+/* Fonts global attributes, overrider if needed */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Main header */
+h1 {
+  display: inline-block;
+  font-family: 'Boogaloo', Arial, sans-serif;
+  font-size: 72px;
+  color: var(--color-text1);
+  margin-left: 10px;
+  width: auto;
+  line-height: 1.25;
+}
+
+/* Sections headers */
+h2 {
+  margin: 0px 0px 10px 0px;
+  font-size: 22px;
+}
+
+h3 {
+  margin: 0px 0px 10px 0px;
+  font-size: 16px;
+  opacity: .7;
+}
+
+/* Global body definitions */
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--color-bg-main);
+}
+
+/* Semantic division definitions */
+header {
+  height: 88px;
+  background-color: var(--color-bg-header);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  display: inline-block;
+  padding-left: 50px;
+  width: auto;
+  height: 88px;
+  position: absolute;
+  top: 0px;
+}
+
+nav ul {
+  position: static;
+  margin: 0 auto;
+  height: 88px;
+}
+
+nav li {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  top: 56px;
+  list-style-image: none;
+}
+
+main {
+  position: relative;
+  width: 80%;
+  padding: 80px 10% 60px;
+}
+
+section {
+  padding: 20px 20px;
+  margin: 10px;
+  border: 1px solid var(--color-section-border);
+  border-radius: 10px;
+}
+
+section p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+section ol,
+ul {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+section li {
+  line-height: 1.6;
+}
+
+section figure {
+  display: inline-block;
+  border: 1px solid var(--color-section-border);
+  padding: 10px;
+  margin: 10px auto 10px 20px;
+}
+
+section figcaption {
+  font-size: 12px;
+  font-style: italic;
+}
+
+section table {
+  border-collapse: collapse;
+}
+
+tr.border {
+  border: 1px solid gainsboro;
+}
+
+/* Footer elements */
+footer {
+  position: fixed;
+  bottom: 0px;
+  height: 30px;
+  background-color: var(--color-bg-foo);
+  width: 100%;
+}
+
+footer p {
+  position: relative;
+  top: 5px;
+  display: block;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  color: aliceblue;
+}
+
+footer a {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 30px;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+  margin: 5px 5px;
+}
+
+footer img:hover {
+  width: 25px;
+  height: 25px;
+  margin: 2.5px 2.5px;
+}
+
+/* Menu anchors */
+.menu a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: var(--color-text2);
+  font-weight: 100;
+}
+
+.menu a:hover {
+  color: var(--color-text2-hov);
+  font-weight: 700;
+}
+
+/* Code spans old school console looking */
+.code {
+  display: block;
+  font-family: 'Jet Brains', system-ui, monospace;
+  font-size: 14px;
+  opacity: .8;
+  background-color: rgba(0, 0, 0, .98);
+  color: hsl(120, 100%, 60%);
+  font-weight: 100;
+  padding: 1px 5px;
+}
+
+/* Content up and down fader divs*/
+.fader {
+  position: fixed;
+  height: 30px;
+  width: 100vw;
+  z-index: 2;
+}
+
+.up {
+  top: 88px;
+  background: linear-gradient(to bottom, var(--color-bg-main), 70%, transparent);
+}
+
+.down {
+  bottom: 30px;
+  background: linear-gradient(to top, var(--color-bg-main), 70%, transparent);
+}
