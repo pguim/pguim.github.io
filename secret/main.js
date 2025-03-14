@@ -6,6 +6,11 @@ document.querySelector(".gibt").addEventListener("click", () => {
 
   //Animate actual present fading in
   const present = document.querySelector(".present")
-  present.classList.remove("hide")
   present.classList.add("show")
+
+  //Let space for present
+  document.querySelectorAll(".musthide").forEach(e => {
+    e.classList.add("hide")
+  })
+
 })
